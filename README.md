@@ -1,8 +1,8 @@
-#FinMeter
+# FinMeter
 
 FinMeter is a library for analyzing poetry in Finnish. It handels typical rhyming such as alliteration, assonance and consonance, Japanese meters and Kalevala meter. It can also be used to hyphenate Finnish.
 
-##Hyphenation
+## Hyphenation
 
 Finnish words can be divided into syllables like so
 
@@ -14,7 +14,7 @@ Finnish words can be divided into syllables like so
 	print( finmeter.count_sentence_syllables("kissa juoksi") )
 	>> 4
 
-##Rhyming
+## Rhyming
 
 FinMeter can be used to check whether two words rhyme
 
@@ -24,7 +24,7 @@ FinMeter can be used to check whether two words rhyme
 	print( finmeter.full_rhyme("pallolla", "kallolla") ) #True
 	print( finmeter.alliteration("voi", "vehnä") ) #True
 
-##Syllabic meters
+## Syllabic meters
 
 Meters based on the number of syllables can be assessed by FinMeter
 
@@ -36,7 +36,7 @@ Meters based on the number of syllables can be assessed by FinMeter
 
 The result is a dictionary cointaining information about the meter for each verse in "verse results" and about the overall length in "poem_length_error". **Note:** For Kalevala you should use *analyze_kalevala* instead.
 
-##Kalevala meter
+## Kalevala meter
 
 Kalevala meter functionality takes the poetic foot into account and accepts verses of upto 10 syllables providing that certain poetic rules are met. In addition, the method assess other features important in Kalevala
 
@@ -46,14 +46,14 @@ Kalevala meter functionality takes the poetic foot into account and accepts vers
 
 The method returns a list of analysis results for each verse. If base_rule is True, it means that the verse follows the Kalevala meter, both in syllables and in foot.
 
-##Syllable length
+## Syllable length
 
 To check if a syllable is short, use the following method
 
 	import finmeter
 	print( finmeter.is_short_syllable("tu") )
 
-##Cite
+# Cite
 
 For the time being please idicate that you are using the rhyming functionality of Poem Machine by citing the following publication.
 

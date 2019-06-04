@@ -1,0 +1,67 @@
+{"kalevala" : {
+  "verses": [
+    {"syllables" : 8}
+  ],
+  "repeat-verses" : "no-limit"
+  },
+  "haiku" : {
+  "verses": [
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 5}
+  ],
+  "repeat-verses" : "none"
+  },
+    "katauta" : {
+  "verses": [
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 7}
+  ],
+  "repeat-verses" : "none"
+  },
+  "sedooka" : {
+  "verses": [
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 7},
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 7}
+  ],
+  "repeat-verses" : "none"
+  },
+  "bussokusekika" : {
+  "verses": [
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 7},
+    {"syllables" : 7}
+  ],
+  "repeat-verses" : "none"
+  },
+    "tanka" : {
+  "verses": [
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 7}
+  ],
+  "repeat-verses" : "none"
+  },
+  "chooka":  {
+    "verses": [
+    {"syllables" : 5},
+    {"syllables" : 7}
+  ],
+    "end-verses":[
+    {"syllables" : 5},
+    {"syllables" : 7},
+    {"syllables" : 7}
+    ],
+  "repeat-verses" : ">1"
+  }
+}

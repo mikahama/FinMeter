@@ -57,4 +57,4 @@ To check if a syllable is short, use the following method
 
 For the time being please idicate that you are using the rhyming functionality of Poem Machine by citing the following publication.
 
-Hämäläinen, M. (2018). Poem Machine - a Co-creative NLG Web Application for Poem Writing. In *The 11th International Conference on Natural Language Generation: Proceedings of the Conference* (pp. 195–196)
+Hämäläinen, Mika (2018). Poem Machine - a Co-creative NLG Web Application for Poem Writing. In *The 11th International Conference on Natural Language Generation: Proceedings of the Conference* (pp. 195–196)

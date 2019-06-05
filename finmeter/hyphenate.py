@@ -56,7 +56,10 @@ def _remove_orphan_consonants(syllables):
 	for i in range(len(syllables)):
 		s = syllables[i]
 		if len(s) == 1 and s not in vowels:
-			syllables[i-1] += syllables[i]
+			if i == 0:
+				syllables[1] = syllables[i] +syllables[1]
+			else:	
+				syllables[i-1] += syllables[i]
 			syllables[i] = ""
 	for s in syllables:
 		if len(s) > 0:

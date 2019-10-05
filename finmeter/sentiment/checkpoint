@@ -1,0 +1,3 @@
+model_checkpoint_path: "senti_model.bin"
+all_model_checkpoint_paths: "tmp/dan4508373784.ckpt"
+all_model_checkpoint_paths: "senti_model.bin"

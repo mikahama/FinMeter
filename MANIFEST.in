@@ -1,0 +1,2 @@
+prune finmeter/data/*
+prune finmeter/sentiment/pickle/*

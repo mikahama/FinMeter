@@ -1,1 +1,5 @@
 finmeter.egg-info
+*.bin
+fi_concreteness.json
+*.hkl
+unigrams_sorted_5k.txt

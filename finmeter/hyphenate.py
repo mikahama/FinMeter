@@ -14,7 +14,7 @@ def _remove_diacritics(word):
 			r_word += c
 	return r_word
 
-def hyphenate(word):
+def hyphenate(word, return_with_hyphen=True):
 	word = _remove_diacritics(word) +" "
 	prev_c = ""
 	ret = []
@@ -49,7 +49,11 @@ def hyphenate(word):
 			prev_c = ""
 	ret.append(current_syllable)
 	ret = _remove_orphan_consonants(ret)
-	return "-".join(ret).replace("--", "-")
+	ret = "-".join(ret).replace("--", "-")
+	if return_with_hyphen:
+		return ret
+	else:
+		return ret.split("-")
 
 def _remove_orphan_consonants(syllables):
 	output = []

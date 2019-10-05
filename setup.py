@@ -63,14 +63,14 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=["finmeter"],
+    packages=["finmeter", "finmeter.utils","finmeter.sentiment","finmeter.sentiment.utils"],
     package_dir={'finmeter': 'finmeter'},
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=["unidecode","sklearn","mikatools","numpy","scipy","tqdm","hickle","argparse"],
+    install_requires=["unidecode","sklearn","mikatools>=0.0.7","numpy","scipy","tqdm","hickle","argparse","uralicNLP"],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
@@ -82,7 +82,7 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={
-        'finmeter': ['*.json'],
+        'finmeter': ['*.json', "sentiment/checkpoint", "sentiment/senti_model.bin.data-00000-of-00001", "sentiment/senti_model.bin.index", "sentiment/senti_model.bin.meta", "sentiment/checkpoints/en-es-bimap-1.bin"],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may

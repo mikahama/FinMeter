@@ -10,7 +10,7 @@ If you use the methods relating to semantics, metaphors and sentiment, you will 
 
 	python3 -m finmeter.download 
 
-Sentiment analysis requires **tensorflow** (tested on 1.9.0).
+Sentiment analysis requires **tensorflow** (tested on 1.9.0 and numpy 1.16.4).
 
 ## Hyphenation
 

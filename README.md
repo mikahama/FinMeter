@@ -1,6 +1,6 @@
 # FinMeter
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473450.svg)](https://doi.org/10.5281/zenodo.3473450) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473456.svg)](https://doi.org/10.5281/zenodo.3473456)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3474018.svg)](https://doi.org/10.5281/zenodo.3474018) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473456.svg)](https://doi.org/10.5281/zenodo.3473456)
 
 FinMeter is a library for analyzing poetry in Finnish. It handels typical rhyming such as alliteration, assonance and consonance, Japanese meters and Kalevala meter. It can also be used to hyphenate Finnish.
 
@@ -10,7 +10,7 @@ If you use the methods relating to semantics, metaphors and sentiment, you will 
 
 	python3 -m finmeter.download 
 
-Sentiment analysis requires **tensorflow** (tested on 1.9.0).
+Sentiment analysis requires **tensorflow** (tested on 1.9.0 and numpy 1.16.4).
 
 ## Hyphenation
 
@@ -73,9 +73,9 @@ The library has a variety of different functions realted to semantics
 	from finmeter import semantics
 
 	semantics.concreteness("kissa")
-	>> True
-	semantics.is_concrete("kissa")
 	>> 4.615
+	semantics.is_concrete("kissa")
+	>> True
 
 The former method outputs True if the concreteness of the word is equal or greater than 3. The latter method outputs a concreteness score from 1 to 5. Both of the methods will return None for out of vocabulary words.
 

@@ -97,10 +97,12 @@ The library can be used to cluster words together into semantic clusters and to 
 The library provides a somewhat functional sentiment analysis, but I wouldn't hold my breath.
 
 	from finmeter import sentiment
-	sentiment.predict(["täällä on sika kivaa"])
-	>> [3]
-	sentiment.predict(["tällä on tylsää ja huonoa"])
-	>> [0]
+	sentiment.predict("Olipa kakkainen leffa")
+	>> -2
+	sentiment.predict("Kaikki on tosi kivaa")
+	>> 2
+
+The possible values are -2 for strongly negative, -1 for negative, 1 for positive and 2 for strongly positive.
 
 # Metaphors
 

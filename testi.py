@@ -24,7 +24,7 @@ print(metaphor.interpret("mies", "susi", maximum=10))
 
 from finmeter import sentiment
 
-print(sentiment.predict(["täällä on sika kivaa"]))
-print(sentiment.predict(["tällä on tylsää ja huonoa"]))
+print(sentiment.predict("täällä on sika kivaa")
+print(sentiment.predict("tällä on tylsää ja huonoa"))
 
 """

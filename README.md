@@ -73,9 +73,9 @@ The library has a variety of different functions realted to semantics
 	from finmeter import semantics
 
 	semantics.concreteness("kissa")
-	>> True
-	semantics.is_concrete("kissa")
 	>> 4.615
+	semantics.is_concrete("kissa")
+	>> True
 
 The former method outputs True if the concreteness of the word is equal or greater than 3. The latter method outputs a concreteness score from 1 to 5. Both of the methods will return None for out of vocabulary words.
 

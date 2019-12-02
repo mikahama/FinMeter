@@ -118,4 +118,4 @@ The library can give interpretations for metaphors. The lower the value, the mor
 
 If you use this library, cite the following publication
 
-Mika Hämäläinen and Khalid Alnajjar (In press). [Let's FACE it. Finnish Poetry Generation with Aesthetics and Framing](https://arxiv.org/abs/1910.13946). In *the Proceedings of The 12th International Conference on Natural Language Generation*.
+Mika Hämäläinen and Khalid Alnajjar (2019). [Let's FACE it. Finnish Poetry Generation with Aesthetics and Framing](https://www.aclweb.org/anthology/W19-8637/). In *the Proceedings of The 12th International Conference on Natural Language Generation*. pages 290-300

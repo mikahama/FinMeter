@@ -7,9 +7,15 @@ class Meta4meaningFi:
     def __init__(self, rows_path, matrix_path):
         # get the rows and their indecies
         self.rows = load_termidx(rows_path)
-        self.rev_rows = {i: r for r, i in self.rows.items()}
-        sorted_rows = sorted(self.rows.items(), key=lambda k: k[1])
-        self.sorted_rows = list(map(lambda r: r[0], sorted_rows))
+
+        cols_path = rows_path  # They are the same in our case
+
+        # get the columns and their indecies
+        self.cols = load_termidx(cols_path)
+
+        self.rev_cols = {i: r for r, i in self.cols.items()}
+        sorted_cols = sorted(self.cols.items(), key=lambda k: k[1])
+        self.sorted_cols = list(map(lambda r: r[0], sorted_cols))
 
         # load the matrix
         self.matrix = hkl.load(matrix_path)
@@ -30,7 +36,7 @@ class Meta4meaningFi:
             row = self.matrix[i, :].A[0]  # get it's relatedness vector/row
             if normalize:
                 row = preprocessing.normalize(row[:, np.newaxis], axis=0, norm='l1').ravel()
-            row = zip(self.sorted_rows, row)  # word: relatedness_score
+            row = zip(self.sorted_cols, row)  # word: relatedness_score
             if positive:
                 row = filter(lambda r: r[1] > 0, row)  # remove non-related words
             row = dict(row)
@@ -38,39 +44,45 @@ class Meta4meaningFi:
         except Exception as e:
             return None
 
-    def get_sorted_rel(self, word, normalize=True, positive=True):
+    def get_sorted_rel(self, word, normalize=True, positive=True, k=0):
         row = self.get_rel(word, normalize, positive)
         if row:
             row = sorted(row.items(), key=lambda k: k[1], reverse=True)
+            if k > 0 and k < len(row):
+                row = row[:k]
         return row
 
     def interpret(self, tenor, vehicle):
-        tv = self.get_rel(tenor)
-        vv = self.get_rel(vehicle)
+        tv = self.get_vector(tenor)
+        vv = self.get_vector(vehicle)
 
-        if not tv or not vv:
+        if tv is None or vv is None:
             return []
 
-        features = list(set(tv.keys()) | set(vv.keys()))
-        # consider only concrete features
-        # features = list(filter(lambda f: is_concrete(f), features))
+        features = np.union1d(np.where(tv > 0), np.where(vv > 0))  # all non-zero features
+        shared_features = np.intersect1d(np.where(tv > 0), np.where(vv > 0))  # shared features
 
-        mv = [tv[f] * vv[f] if f in tv and f in vv else 0.0 for f in features]  # multiplication
-        odv = [vv[f] - tv[f] if f in tv and f in vv and tv[f] > 0 and vv[f] > 0 else float('-inf') for f in
-               features]  # overlap difference
+        # consider only concrete features? add filter here
 
-        # map to features
-        mvf = zip(features, mv)
-        odvf = zip(features, odv)
+        mv = np.zeros(tv.shape)
+        mv[shared_features] = tv[shared_features] * vv[shared_features]  # multiplication
+        mv = mv[features]
+
+        odv = np.zeros(tv.shape)
+        odv[features] = float('-inf')
+        odv[shared_features] = vv[shared_features] - tv[shared_features]  # overlap difference
+        odv = odv[features]
 
         # sort them and convert back into ordered features
-        mvf = sorted(mvf, key=lambda k: k[1], reverse=True)
-        odvf = sorted(odvf, key=lambda k: k[1], reverse=True)
-        mvf = list(map(lambda r: r[0], mvf))
-        odvf = list(map(lambda r: r[0], odvf))
+        mvf = np.argsort(-mv)
+        odvf = np.argsort(-odv)
+
+        mvf_l = mvf.tolist()
+        odvf_l = odvf.tolist()
 
         # ranked interpretations
-        interpretations = map(lambda f: (f, min([mvf.index(f), odvf.index(f)])), features)
+        interpretations = [(self.rev_cols[features[f]], min([mvf_l.index(f), odvf_l.index(f)])) for f in
+                           range(len(features))]
         return list(sorted(interpretations, key=lambda k: k[1]))
 
     def metaphoricity(self, tenor, vehicle, expression, k=0):

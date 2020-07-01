@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3474018.svg)](https://doi.org/10.5281/zenodo.3474018) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473456.svg)](https://doi.org/10.5281/zenodo.3473456)
 
-FinMeter is a library for analyzing poetry in Finnish. It handels typical rhyming such as alliteration, assonance and consonance, Japanese meters and Kalevala meter. It can also be used to hyphenate Finnish.
+FinMeter is a library for analyzing poetry in Finnish. It handles typical rhyming such as alliteration, assonance and consonance, Japanese meters and Kalevala meter. It can also be used to hyphenate Finnish and analyse meter. In addition, it can do semantic clustering, metaphor interpretation, concreteness scoring and sentiment analysis
 
 	pip install finmeter
 

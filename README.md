@@ -119,3 +119,11 @@ The library can give interpretations for metaphors. The lower the value, the mor
 If you use this library, cite the following publication
 
 Mika Hämäläinen and Khalid Alnajjar (2019). [Let's FACE it. Finnish Poetry Generation with Aesthetics and Framing](https://www.aclweb.org/anthology/W19-8637/). In *the Proceedings of The 12th International Conference on Natural Language Generation*. pages 290-300
+
+# Business solutions
+
+
+<img src="https://rootroo.com/cropped-logo-01-png/" alt="Rootroo logo" width="128px" height="128px">
+
+Advanced text analysis such as figurative language has a huge potential in many contexts, such as in understanidng the pragmatics of your user data or in generating advertising messages. We are here for you! [Rootroo offers consulting related to advanced text analysis](https://rootroo.com/). We have a strong academic background in the state-of-the-art AI solutions for every NLP need. Just contact us, we won't bite.
+

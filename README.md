@@ -114,6 +114,14 @@ The library can give interpretations for metaphors. The lower the value, the mor
 
 *maximum* is an optional parameter to limit the number of interpretations. If you do not need POS tagging, you can pass *pos_tags=False*.
 
+It is also possible to assess how metaphorical a tenor and vehicle candidates are in a given sentence (_tuli leiskuu kuin tähti taivaalla_):
+
+	from finmeter import metaphor
+	metaphor.metaphoricity("tuli", "tähti", ["tuli", "leiskua", "kuin", "tähti", "taivas"])
+	>> 38.90
+
+The score indicates how metaphorical the two words are given a context. NB the sentence has to be tokenized and lemmatized. 
+
 # Cite
 
 If you use this library, cite the following publication

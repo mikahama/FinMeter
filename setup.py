@@ -33,8 +33,8 @@ setup(
     url='https://github.com/mikahama/FinMeter',
 
     # Author details
-    author='Mika Hämäläinen, Dept. of  Digital Humanities, University of Helsinki',
-    author_email='mika.hamalainen@helsinki.fi',
+    author='Mika Hämäläinen',
+    author_email='mika@rootroo.com',
 
     # Choose your license
     license='Apache License, Version 2.0',

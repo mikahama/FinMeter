@@ -1,0 +1,30 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: FinMeter
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Mika
+    family-names: Hämäläinen
+  - given-names: Khalid
+    family-names: Alnajjar
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.3474018
+    description: Zenodo
+repository-code: 'https://github.com/mikahama/finmeter'
+date-released: '2019-10-05'
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Hämäläinen"
+    given-names: "Mika"
+  - family-names: "Alnajjar"
+    given-names: "Khalid"
+  journal: "the Proceedings of The 12th International Conference on Natural Language Generation"
+  title: "Let's FACE it. Finnish Poetry Generation with Aesthetics and Framing"
+  year: 2019
